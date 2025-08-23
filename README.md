@@ -67,7 +67,7 @@ Este projeto implementa um **sistema embarcado** utilizando o **Raspberry Pi Pic
 
 1. Clone o projeto:
    ```bash
-   git clone https://github.com/seu-repo/projeto-mpu6050-servo.git
+   git clone https://github.com/ThalesFortes/Control-and-Monitoring-with-MPU6050.git
    cd projeto-mpu6050-servo
 
     Configure o SDK do Pico e o CMake.
