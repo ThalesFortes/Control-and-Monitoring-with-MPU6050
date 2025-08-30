@@ -60,9 +60,6 @@ int main() {
         if (angulo >= ANGULO_ALERTA) {
             printf(" ⚠ ALERTA: Angulo acima do limite (%.0f°)!\n", ANGULO_ALERTA);
 
-            // ============================
-            // OLED ALERTA VISUAL
-            // ============================
             ssd1306_Fill(Black);
             ssd1306_SetCursor(10, 20);
             ssd1306_WriteString("⚠ ALERTA", Font_11x18, White);
@@ -70,8 +67,8 @@ int main() {
             ssd1306_WriteString("INCLINACAO!", Font_11x18, White);
             ssd1306_UpdateScreen();
 
-            sleep_ms(1000); // mostra alerta por 1s
-            continue;       // volta para o próximo ciclo (não mostra dados normais)
+            sleep_ms(1000); 
+            continue;      
         } else {
             printf("\n");
         }
