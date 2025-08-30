@@ -44,11 +44,8 @@ float servo_mover_por_eixos(float acc_x, float acc_y, float acc_z) {
 
     angulo_atual = angulo;
 
-    // ============================
-    // 🔴 ALERTA DE INCLINAÇÃO
-    // ============================
+
     if (angulo >= ANGULO_ALERTA) {
-        // Pisca LED vermelho como alerta
         for (int i = 0; i < 3; i++) {
             leds_off_all();
             led_on(LED_VERMELHO);
@@ -56,10 +53,9 @@ float servo_mover_por_eixos(float acc_x, float acc_y, float acc_z) {
             leds_off_all();
             sleep_ms(150);
         }
-        return angulo; // não precisa mostrar LEDs normais
+        return angulo; 
     }
 
-    // LEDs de direção (modo normal)
     leds_off_all();
     if (fabs(acc_x) > fabs(acc_y) && fabs(acc_x) > fabs(acc_z)) {
         (acc_x > 0.2f) ? led_on(LED_VERDE) : led_on(LED_VERMELHO);
